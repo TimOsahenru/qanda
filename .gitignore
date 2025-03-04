@@ -1,0 +1,40 @@
+.qanda/
+# Virtual environment
+venv/
+.qanda/
+
+# Python bytecode and cache
+__pycache__/
+*.py[cod]
+*$PYTHON*
+
+# Logs and environment files
+*.log
+.env
+*.env.local
+*.env.production
+*.env.test
+config/settings/local.py  # If you have environment-specific settings
+
+# Database and migrations
+db.sqlite3
+*.sqlite3
+*.db
+*.db-journal
+migrations/**/__pycache__/
+*.mo
+*.pot
+
+
+# Compiled Python packages (if using pipenv/poetry)
+pip-log.txt
+pip-delete-this-directory.txt
+poetry.lock
+
+# VS Code and JetBrains IDE settings
+.vscode/
+.idea/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
