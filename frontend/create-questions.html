@@ -41,6 +41,7 @@
       background-color: #ffffff;
       border-radius: 20px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px; /* Space between chat box and input */
     }
 
     .chat-box {
@@ -50,7 +51,6 @@
       border: 1px solid #e0e0e0;
       border-radius: 15px;
       background-color: #f7fafa;
-      margin-bottom: 20px; /* Adjusted spacing */
     }
 
     .question {
@@ -98,11 +98,12 @@
     }
 
     .input-container {
-      background-color: #ffffff;
+      max-width: 1000px; /* Same width as chat container */
+      margin: 0 auto;
       padding: 20px;
+      background-color: #ffffff; /* Background color restored */
       border-radius: 15px;
       box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
-      margin-top: 20px; /* Space between chat box and input */
     }
 
     .input-box {
@@ -117,14 +118,15 @@
       border-radius: 12px;
       outline: none;
       font-size: 16px;
+      background-color: #ffffff; /* White background for input */
     }
 
     .input-box button {
       padding: 12px 25px;
       border: none;
       border-radius: 12px;
-      background-color: #ffffff;
-      color: #6bb7be;
+      background-color: #6bb7be; /* Background color restored */
+      color: #ffffff;
       cursor: pointer;
       font-size: 20px;
       transition: all 0.3s ease;
@@ -206,120 +208,52 @@
     <div class="container">
       <div class="chat-container">
         <div class="chat-box" id="chat-box">
-          <!-- Questions will be dynamically added here -->
+          <!-- Dummy Questions -->
+          <div class="question">
+            <div>What materials are used in your furniture?</div>
+            <span class="like-btn">&#10084;</span>
+            <span class="like-count">12</span>
+          </div>
+          <div class="question">
+            <div>Do you offer custom designs?</div>
+            <span class="like-btn">&#10084;</span>
+            <span class="like-count">8</span>
+          </div>
+          <div class="question">
+            <div>How long does delivery usually take?</div>
+            <span class="like-btn">&#10084;</span>
+            <span class="like-count">15</span>
+          </div>
+          <div class="question">
+            <div>What materials are used in your furniture?</div>
+            <span class="like-btn">&#10084;</span>
+            <span class="like-count">12</span>
+          </div>
+          <div class="question">
+            <div>Do you offer custom designs?</div>
+            <span class="like-btn">&#10084;</span>
+            <span class="like-count">8</span>
+          </div>
+          <div class="question">
+            <div>How long does delivery usually take?</div>
+            <span class="like-btn">&#10084;</span>
+            <span class="like-count">15</span>
+          </div>
         </div>
-        <div class="input-container">
+      </div>
+      <div class="input-container">
+        <form method="POST" action="{% url 'submit_question' %}"> <!-- Django form action -->
           <div class="input-box">
-            <input type="text" id="question-input" placeholder="Type your question here..." />
-            <button id="submit-question">
+            <input type="text" id="question-input" name="question" placeholder="Type your question here..." required />
+            <button type="submit" id="submit-question">
               <i class="fa fa-paper-plane" aria-hidden="true"></i> <!-- Send icon -->
             </button>
           </div>
-        </div>
+        </form>
       </div>
     </div>
   </section>
   <!-- end questions section -->
-
-  <!-- info section -->
-  <section class="info_section long_section">
-    <div class="container">
-      <div class="contact_nav">
-        <a href="">
-          <i class="fa fa-phone" aria-hidden="true"></i>
-          <span>
-            Call : +01 123455678990
-          </span>
-        </a>
-        <a href="">
-          <i class="fa fa-envelope" aria-hidden="true"></i>
-          <span>
-            Email : demo@gmail.com
-          </span>
-        </a>
-        <a href="">
-          <i class="fa fa-map-marker" aria-hidden="true"></i>
-          <span>
-            Location
-          </span>
-        </a>
-      </div>
-
-      <div class="info_top ">
-        <div class="row ">
-          <div class="col-sm-6 col-md-4 col-lg-3">
-            <div class="info_links">
-              <h4>
-                QUICK LINKS
-              </h4>
-              <div class="info_links_menu">
-                <a class="" href="index.html">Home <span class="sr-only">(current)</span></a>
-                <a class="" href="about.html"> About</a>
-                <a class="" href="furniture.html">Furniture</a>
-                <a class="" href="blog.html">Blog</a>
-                <a class="" href="contact.html">Contact Us</a>
-              </div>
-            </div>
-          </div>
-          <div class="col-sm-6 col-md-4 col-lg-3 mx-auto">
-            <div class="info_post">
-              <h5>
-                INSTAGRAM FEEDS
-              </h5>
-              <div class="post_box">
-                <div class="img-box">
-                  <img src="images/f1.png" alt="">
-                </div>
-                <div class="img-box">
-                  <img src="images/f2.png" alt="">
-                </div>
-                <div class="img-box">
-                  <img src="images/f3.png" alt="">
-                </div>
-                <div class="img-box">
-                  <img src="images/f4.png" alt="">
-                </div>
-                <div class="img-box">
-                  <img src="images/f5.png" alt="">
-                </div>
-                <div class="img-box">
-                  <img src="images/f6.png" alt="">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="info_form">
-              <h4>
-                SIGN UP TO OUR NEWSLETTER
-              </h4>
-              <form action="">
-                <input type="text" placeholder="Enter Your Email" />
-                <button type="submit">
-                  Subscribe
-                </button>
-              </form>
-              <div class="social_box">
-                <a href="">
-                  <i class="fa fa-facebook" aria-hidden="true"></i>
-                </a>
-                <a href="">
-                  <i class="fa fa-twitter" aria-hidden="true"></i>
-                </a>
-                <a href="">
-                  <i class="fa fa-linkedin" aria-hidden="true"></i>
-                </a>
-                <a href="">
-                  <i class="fa fa-instagram" aria-hidden="true"></i>
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- end info_section -->
 
   <!-- footer section -->
   <footer class="footer_section">
@@ -342,54 +276,6 @@
   <!-- Google Map -->
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
   <!-- End Google Map -->
-
-  <script>
-    document.getElementById('submit-question').addEventListener('click', submitQuestion);
-    document.getElementById('question-input').addEventListener('keypress', function (e) {
-      if (e.key === 'Enter') {
-        submitQuestion();
-      }
-    });
-
-    function submitQuestion() {
-      const questionInput = document.getElementById('question-input');
-      const questionText = questionInput.value.trim();
-
-      if (questionText) {
-        const chatBox = document.getElementById('chat-box');
-        const questionDiv = document.createElement('div');
-        questionDiv.className = 'question';
-
-        const questionContent = document.createElement('div');
-        questionContent.textContent = questionText;
-
-        const likeBtn = document.createElement('span');
-        likeBtn.className = 'like-btn';
-        likeBtn.innerHTML = '&#10084;';
-        likeBtn.addEventListener('click', function () {
-          if (likeBtn.classList.contains('liked')) {
-            likeBtn.classList.remove('liked');
-            likeCount.textContent = parseInt(likeCount.textContent) - 1;
-          } else {
-            likeBtn.classList.add('liked');
-            likeCount.textContent = parseInt(likeCount.textContent) + 1;
-          }
-        });
-
-        const likeCount = document.createElement('span');
-        likeCount.className = 'like-count';
-        likeCount.textContent = '0';
-
-        questionDiv.appendChild(questionContent);
-        questionDiv.appendChild(likeBtn);
-        questionDiv.appendChild(likeCount);
-        chatBox.appendChild(questionDiv);
-
-        questionInput.value = '';
-        chatBox.scrollTop = chatBox.scrollHeight;
-      }
-    }
-  </script>
 </body>
 
 </html>
