@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <link rel="icon" href="images/fevicon.png" type="image/gif" />
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+
+  <title>Edgecut - Questions</title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet" />
+
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+
+  <style>
+    .questions_section {
+      background-color: #f9fafa;
+      padding: 100px 0; /* Adjusted padding */
+    }
+
+    .chat-container {
+      max-width: 1000px; /* Slightly wider container */
+      margin: 0 auto;
+      padding: 40px; /* Adjusted padding */
+      background-color: #ffffff;
+      border-radius: 20px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .chat-box {
+      height: 600px; /* Adjusted height */
+      overflow-y: auto;
+      padding: 20px; /* Adjusted padding */
+      border: 1px solid #e0e0e0;
+      border-radius: 15px;
+      background-color: #f7fafa;
+      margin-bottom: 20px; /* Adjusted spacing */
+    }
+
+    .question {
+      margin-bottom: 20px; /* Adjusted spacing */
+      padding: 20px; /* Adjusted padding */
+      border-radius: 15px;
+      position: relative;
+      transition: all 0.3s ease;
+    }
+
+    /* Alternate background colors for questions */
+    .question:nth-child(odd) {
+      background-color: #191e1f; /* Dark for odd questions */
+      color: #ffffff; /* White text for dark background */
+    }
+
+    .question:nth-child(even) {
+      background-color: #ffffff; /* White for even questions */
+      color: #191e1f; /* Dark text for white background */
+    }
+
+    .question:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .question .like-btn {
+      cursor: pointer;
+      color: #6bb7be;
+      position: absolute;
+      right: 20px;
+      bottom: 20px;
+      font-size: 20px;
+      transition: color 0.3s ease;
+    }
+
+    .question .like-btn.liked {
+      color: #f89646; /* Orange when liked */
+    }
+
+    .question .like-count {
+      margin-left: 5px;
+      color: #6bb7be;
+      font-size: 16px;
+    }
+
+    .input-container {
+      background-color: #ffffff;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      margin-top: 20px; /* Space between chat box and input */
+    }
+
+    .input-box {
+      display: flex;
+      gap: 15px; /* Space between input and button */
+    }
+
+    .input-box input {
+      flex: 1;
+      padding: 12px 20px;
+      border: 1px solid #e0e0e0;
+      border-radius: 12px;
+      outline: none;
+      font-size: 16px;
+    }
+
+    .input-box button {
+      padding: 12px 25px;
+      border: none;
+      border-radius: 12px;
+      background-color: #ffffff;
+      color: #6bb7be;
+      cursor: pointer;
+      font-size: 20px;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .input-box button:hover {
+      background-color: #f89646; /* Orange on hover */
+    }
+
+    .input-box button i {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+
+<body class="sub_page">
+
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section long_section px-0">
+      <nav class="navbar navbar-expand-lg custom_nav-container ">
+        <a class="navbar-brand" href="index.html">
+          <span>
+            Edgecut
+          </span>
+        </a>
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class=""> </span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="d-flex mx-auto flex-column flex-lg-row align-items-center">
+            <ul class="navbar-nav  ">
+              <li class="nav-item ">
+                <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="about.html"> About</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="furniture.html">Furnitures</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="blog.html">Blog</a>
+              </li>
+              <li class="nav-item active">
+                <a class="nav-link" href="questions.html">Questions</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="contact.html">Contact Us</a>
+              </li>
+            </ul>
+          </div>
+          <div class="quote_btn-container">
+            <a href="">
+              <span>
+                Login
+              </span>
+              <i class="fa fa-user" aria-hidden="true"></i>
+            </a>
+            <form class="form-inline">
+              <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                <i class="fa fa-search" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!-- end header section -->
+  </div>
+
+  <!-- questions section -->
+  <section class="questions_section layout_padding long_section">
+    <div class="container">
+      <div class="chat-container">
+        <div class="chat-box" id="chat-box">
+          <!-- Questions will be dynamically added here -->
+        </div>
+        <div class="input-container">
+          <div class="input-box">
+            <input type="text" id="question-input" placeholder="Type your question here..." />
+            <button id="submit-question">
+              <i class="fa fa-paper-plane" aria-hidden="true"></i> <!-- Send icon -->
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end questions section -->
+
+  <!-- info section -->
+  <section class="info_section long_section">
+    <div class="container">
+      <div class="contact_nav">
+        <a href="">
+          <i class="fa fa-phone" aria-hidden="true"></i>
+          <span>
+            Call : +01 123455678990
+          </span>
+        </a>
+        <a href="">
+          <i class="fa fa-envelope" aria-hidden="true"></i>
+          <span>
+            Email : demo@gmail.com
+          </span>
+        </a>
+        <a href="">
+          <i class="fa fa-map-marker" aria-hidden="true"></i>
+          <span>
+            Location
+          </span>
+        </a>
+      </div>
+
+      <div class="info_top ">
+        <div class="row ">
+          <div class="col-sm-6 col-md-4 col-lg-3">
+            <div class="info_links">
+              <h4>
+                QUICK LINKS
+              </h4>
+              <div class="info_links_menu">
+                <a class="" href="index.html">Home <span class="sr-only">(current)</span></a>
+                <a class="" href="about.html"> About</a>
+                <a class="" href="furniture.html">Furniture</a>
+                <a class="" href="blog.html">Blog</a>
+                <a class="" href="contact.html">Contact Us</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-sm-6 col-md-4 col-lg-3 mx-auto">
+            <div class="info_post">
+              <h5>
+                INSTAGRAM FEEDS
+              </h5>
+              <div class="post_box">
+                <div class="img-box">
+                  <img src="images/f1.png" alt="">
+                </div>
+                <div class="img-box">
+                  <img src="images/f2.png" alt="">
+                </div>
+                <div class="img-box">
+                  <img src="images/f3.png" alt="">
+                </div>
+                <div class="img-box">
+                  <img src="images/f4.png" alt="">
+                </div>
+                <div class="img-box">
+                  <img src="images/f5.png" alt="">
+                </div>
+                <div class="img-box">
+                  <img src="images/f6.png" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="info_form">
+              <h4>
+                SIGN UP TO OUR NEWSLETTER
+              </h4>
+              <form action="">
+                <input type="text" placeholder="Enter Your Email" />
+                <button type="submit">
+                  Subscribe
+                </button>
+              </form>
+              <div class="social_box">
+                <a href="">
+                  <i class="fa fa-facebook" aria-hidden="true"></i>
+                </a>
+                <a href="">
+                  <i class="fa fa-twitter" aria-hidden="true"></i>
+                </a>
+                <a href="">
+                  <i class="fa fa-linkedin" aria-hidden="true"></i>
+                </a>
+                <a href="">
+                  <i class="fa fa-instagram" aria-hidden="true"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end info_section -->
+
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://html.design/">Free Html Templates</a>
+        Distribution <a href="https://themewagon.com">ThemeWagon</a>
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+
+  <!-- jQery -->
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <!-- bootstrap js -->
+  <script src="js/bootstrap.js"></script>
+  <!-- custom js -->
+  <script src="js/custom.js"></script>
+  <!-- Google Map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+  <!-- End Google Map -->
+
+  <script>
+    document.getElementById('submit-question').addEventListener('click', submitQuestion);
+    document.getElementById('question-input').addEventListener('keypress', function (e) {
+      if (e.key === 'Enter') {
+        submitQuestion();
+      }
+    });
+
+    function submitQuestion() {
+      const questionInput = document.getElementById('question-input');
+      const questionText = questionInput.value.trim();
+
+      if (questionText) {
+        const chatBox = document.getElementById('chat-box');
+        const questionDiv = document.createElement('div');
+        questionDiv.className = 'question';
+
+        const questionContent = document.createElement('div');
+        questionContent.textContent = questionText;
+
+        const likeBtn = document.createElement('span');
+        likeBtn.className = 'like-btn';
+        likeBtn.innerHTML = '&#10084;';
+        likeBtn.addEventListener('click', function () {
+          if (likeBtn.classList.contains('liked')) {
+            likeBtn.classList.remove('liked');
+            likeCount.textContent = parseInt(likeCount.textContent) - 1;
+          } else {
+            likeBtn.classList.add('liked');
+            likeCount.textContent = parseInt(likeCount.textContent) + 1;
+          }
+        });
+
+        const likeCount = document.createElement('span');
+        likeCount.className = 'like-count';
+        likeCount.textContent = '0';
+
+        questionDiv.appendChild(questionContent);
+        questionDiv.appendChild(likeBtn);
+        questionDiv.appendChild(likeCount);
+        chatBox.appendChild(questionDiv);
+
+        questionInput.value = '';
+        chatBox.scrollTop = chatBox.scrollHeight;
+      }
+    }
+  </script>
+</body>
+
+</html>
