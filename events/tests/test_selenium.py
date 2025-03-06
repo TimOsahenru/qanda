@@ -7,10 +7,23 @@ from selenium.webdriver.common.by import By
 def test_home_page(browser):
     browser.get('http://localhost:8000/')
 
-    assert 'install' in browser.title
-# 
-    heading = browser.find_element('tag name', 'h1')
-    assert heading.text == 'The install worked successfully! Congratulations!'
+    title_section = browser.find_element(By.TAG_NAME, 'title')
+    title_name = title_section.get_attribute('textContent')
+    assert title_name == 'qanda | home', f"Expected title to be 'qanda | home' but {title_name}"
 
-    # test event form
-    # test for redirect
+    hero_section = browser.find_element(By.CSS_SELECTOR, 'div.detail-box h1')
+    hero_title = hero_section.get_attribute('textContent').strip()
+    assert hero_title == 'Smartest way to collect questions from your audience.'
+
+    hero_section = browser.find_element(By.CSS_SELECTOR, 'div.detail-box p')
+    hero_title = hero_section.get_attribute('textContent').strip()
+    assert hero_title == 'Streamline your Q&A in advance. Just share the link with your audience'
+
+    form_section = browser.find_element(By.TAG_NAME, 'form') 
+
+    event_name_input = browser.find_element(By.CSS_SELECTOR, '.input-field')
+    event_name_input.send_keys('PyConGh 2025')
+    submit_button = browser.find_element(By.CSS_SELECTOR, '.btn1')
+    submit_button.click()
+    redirect_url = 'http://localhost:8000/question'
+    assert browser.current_url == redirect_url
