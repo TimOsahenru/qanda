@@ -847,3 +847,61 @@ a:focus {
   color: inherit;
 }
 /*# sourceMappingURL=style.css.map */
+
+/* Button and Input Field Container */
+.btn-box {
+  display: flex;
+  flex-direction: column; /* Stack input and button vertically */
+  gap: 10px; /* Space between input and button */
+  width: 100%; /* Ensure the container takes full width */
+  max-width: 400px; /* Limit the maximum width for larger screens */
+  margin: 0 auto; /* Center the container horizontally */
+  padding: 0; /* Remove any padding that could affect alignment */
+}
+
+/* Input Field */
+.input-field {
+  width: 100%; /* Make input field full width of its container */
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-sizing: border-box; /* Include padding in the width */
+  margin: 0; /* Remove any default margins */
+}
+
+/* Button */
+.slider_section .detail-box .btn-box .btn1 {
+  white-space: nowrap; /* Prevent button text from wrapping */
+  padding: 10px 20px; /* Adjust padding to fit text */
+  width: 100%; /* Make button same width as input field */
+  text-align: center; /* Center button text */
+  background-color: #f89646; /* Set a solid background color */
+  color: #fff; /* Set text color to white */
+  border: none; /* Remove default border */
+  border-radius: 5px; /* Add rounded corners */
+  text-decoration: none; /* Remove underline if it's a link */
+  display: inline-block; /* Ensure it behaves like a button */
+  font-size: 16px; /* Adjust font size if needed */
+  cursor: pointer; /* Add pointer cursor for better UX */
+  box-sizing: border-box; /* Include padding in the width */
+  margin: 0; /* Remove any default margins */
+}
+
+/* Button Hover Effect */
+.slider_section .detail-box .btn-box .btn1:hover {
+  background-color: transparent;
+  color: #f89646;
+  border: 1px solid #f89646;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  .btn-box {
+    max-width: 100%; /* Allow the container to take full width on mobile */
+  }
+
+  .input-field,
+  .slider_section .detail-box .btn-box .btn1 {
+    font-size: 14px; /* Slightly smaller font size for mobile */
+  }
+}
