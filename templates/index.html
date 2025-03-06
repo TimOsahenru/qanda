@@ -96,8 +96,9 @@
                       Streamline your Q&A in advance. <br>Just share the link with your audience
                     </p>
                     <div class="btn-box">
-                        <form method="POST" action="/question">
-                            <input type="text" class="input-field" placeholder="E.g: Chat with Osahenru"><br><br>
+                        <form method="POST">
+                            {% csrf_token %}
+                            <input type="text" name="{{ form.name.name}}" id="{{ form.name.id_for_label }}" class="input-field" placeholder="E.g: Chat with Osahenru" required><br><br>
                             <button type="submit" class="btn1">Generate event question link</button>
                         </form>
                     </div>
