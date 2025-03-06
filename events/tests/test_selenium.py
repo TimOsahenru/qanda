@@ -11,11 +11,7 @@ def test_home_page(browser):
     title_name = title_section.get_attribute('textContent')
     assert title_name == 'qanda | home', f"Expected title to be 'qanda | home' but {title_name}"
 
-
-    # heading = browser.find_element('tag name', 'h1')
-    # assert heading.text == 'The install worked successfully! Congratulations!'
-
-    # form_section = browser.find_element(By.TAG_NAME, 'qanda | home') 
+    form_section = browser.find_element(By.TAG_NAME, 'form') 
     # test event form
     # test for redirect
     # test title
