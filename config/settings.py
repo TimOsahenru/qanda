@@ -28,6 +28,7 @@ INSTALLED_APPS = [
 
     # Custom apps
     'events',
+    'questions',
 ]
 
 MIDDLEWARE = [
