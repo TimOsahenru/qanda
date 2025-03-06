@@ -12,8 +12,9 @@ def test_home_page(browser):
     assert title_name == 'qanda | home', f"Expected title to be 'qanda | home' but {title_name}"
 
     form_section = browser.find_element(By.TAG_NAME, 'form') 
+
     # test event form
     # test for redirect
-    # test title
+    # test title [x]
     # test button name
     # test taglines in hero section
