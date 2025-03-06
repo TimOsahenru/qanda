@@ -27,9 +27,3 @@ def test_home_page(browser):
     submit_button.click()
     redirect_url = 'http://localhost:8000/question'
     assert browser.current_url == redirect_url
-
-    # test event form [x]
-    # test for redirect [x]
-    # test title [x]
-    # test button name [x]
-    # test taglines in hero section
