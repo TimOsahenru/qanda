@@ -15,6 +15,7 @@
 
   <title>Edgecut</title>
 
+
   <!-- bootstrap core css -->
   <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 
@@ -27,89 +28,7 @@
   <link href="css/style.css" rel="stylesheet" />
   <!-- responsive style -->
   <link href="css/responsive.css" rel="stylesheet" />
-  <!-- Custom styles for the new elements -->
-  <style>
-    /* Heading with Edit Icon */
-    .heading_container h2 {
-      position: relative;
-      font-weight: bold;
-      text-transform: uppercase;
-      margin-bottom: 0;
-      display: flex;
-      align-items: center;
-      gap: 15px; /* Space between title and edit icon */
-    }
 
-    .heading_container .edit-icon {
-      font-size: 24px; /* Slightly larger */
-      font-weight: bold; /* Bolder */
-      color: #6bb7be; /* Matching your theme color */
-      cursor: pointer;
-      transition: color 0.3s ease;
-    }
-
-    .heading_container .edit-icon:hover {
-      color: #f89646; /* Hover color */
-    }
-
-    /* Text Paragraph */
-    .detail-box p {
-      font-size: 16px;
-      color: #555;
-      line-height: 1.6;
-      margin-bottom: 20px;
-    }
-
-    /* URL Input Field */
-    .url-input-container {
-      position: relative;
-      width: 100%;
-      max-width: 500px;
-      margin-bottom: 20px;
-    }
-
-    .url-input-container input {
-      width: 100%;
-      padding: 12px 40px 12px 16px; /* Space for the copy icon */
-      border: 2px solid #ddd;
-      border-radius: 5px;
-      font-size: 16px;
-      color: #333;
-      outline: none;
-      transition: border-color 0.3s ease;
-    }
-
-    .url-input-container input:focus {
-      border-color: #6bb7be; /* Matching your theme color */
-    }
-
-    .url-input-container .copy-icon {
-      position: absolute;
-      right: 12px;
-      top: 50%;
-      transform: translateY(-50%);
-      cursor: pointer;
-      font-size: 20px;
-      color: #6bb7be; /* Matching your theme color */
-      transition: color 0.3s ease;
-    }
-
-    .url-input-container .copy-icon:hover {
-      color: #f89646; /* Hover color */
-    }
-
-    /* Goto Icon */
-    .goto-icon {
-      font-size: 24px;
-      color: #6bb7be; /* Matching your theme color */
-      cursor: pointer;
-      transition: color 0.3s ease;
-    }
-
-    .goto-icon:hover {
-      color: #f89646; /* Hover color */
-    }
-  </style>
 </head>
 
 <body class="sub_page">
@@ -168,6 +87,7 @@
   </div>
 
   <!-- about section -->
+
   <section class="about_section layout_padding long_section">
     <div class="container">
       <div class="row">
@@ -180,27 +100,21 @@
           <div class="detail-box">
             <div class="heading_container">
               <h2>
-                Chat with Tim Osahenru 1.0
+                About Us
               </h2>
-              <a href="" style="background-color: transparent;">
-                  <i class="fa fa-edit edit-icon" aria-hidden="true"></i>
-                </a>
             </div>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti dolorem eum consequuntur ipsam repellat dolor soluta aliquid laborum, eius odit consectetur vel quasi in quidem, eveniet ab est corporis tempore.
             </p>
-            <div class="url-input-container">
-              <input type="text" id="urlInput" placeholder="Enter URL" />
-              <i class="fa fa-copy copy-icon" aria-hidden="true" onclick="copyUrl()"></i>
-            </div>
-            <a href="" style="background-color: transparent;">
-              <i class="fa fa-arrow-right goto-icon" aria-hidden="true"></i>
+            <a href="">
+              Read More
             </a>
           </div>
         </div>
       </div>
     </div>
   </section>
+
   <!-- end about section -->
 
 
@@ -329,14 +243,6 @@
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
   <!-- End Google Map -->
 
-  <script>
-    function copyUrl() {
-      const urlInput = document.getElementById('urlInput');
-      urlInput.select();
-      document.execCommand('copy');
-      // alert('URL copied to clipboard!');
-    }
-  </script>
 </body>
 
 </html>
