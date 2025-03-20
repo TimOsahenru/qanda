@@ -1,0 +1,177 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{block.super}} | event{% endblock %}
+{% block content %}
+  <!-- header section strats -->
+  {% include 'includes/_header.html' %}
+  <!-- end header section -->
+  <style>
+    /* Ensure the footer stays at the bottom */
+    html, body {
+      height: 100%;
+      margin: 0;
+    }
+    .wrapper {
+      min-height: 100%;
+      display: flex;
+      flex-direction: column;
+    }
+    .content {
+      flex: 1;
+    }
+
+    /* Heading with Edit Icon */
+    .heading_container h2 {
+      position: relative;
+      font-weight: bold;
+      text-transform: uppercase;
+      margin-bottom: 0;
+      display: flex;
+      align-items: center;
+      gap: 15px; /* Space between title and edit icon */
+    }
+
+    .heading_container .edit-icon {
+      font-size: 24px; /* Slightly larger */
+      font-weight: bold; /* Bolder */
+      color: #6bb7be; /* Matching your theme color */
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .heading_container .edit-icon:hover {
+      color: #f89646; /* Hover color */
+    }
+
+    /* Text Paragraph */
+    .detail-box p {
+      font-size: 16px;
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 20px;
+    }
+
+    /* URL Input Field */
+    .url-input-container {
+      position: relative;
+      width: 100%;
+      max-width: 500px;
+      margin-bottom: 20px;
+    }
+
+    .url-input-container input {
+      width: 100%;
+      padding: 10px 16px; /* Slightly smaller padding */
+      border: 2px solid #ddd;
+      border-radius: 8px;
+      font-size: 14px; /* Smaller font size */
+      color: #333;
+      outline: none;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .url-input-container input:focus {
+      border-color: #6bb7be;
+      box-shadow: 0 2px 8px rgba(107, 183, 190, 0.3);
+    }
+
+    /* Button Styles */
+    .button-container {
+      display: flex;
+      gap: 10px; /* Space between buttons */
+      margin-top: 10px;
+    }
+
+    .button-container button {
+      padding: 8px 16px; /* Smaller padding */
+      border: none;
+      border-radius: 8px;
+      font-size: 14px; /* Smaller font size */
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      display: flex;
+      align-items: center;
+      gap: 6px; /* Smaller gap between icon and text */
+    }
+
+    .button-container button:hover {
+      transform: translateY(-2px); /* Slight lift on hover */
+    }
+
+    .button-container .copy-button {
+      background-color: #6bb7be;
+      color: white;
+    }
+
+    .button-container .copy-button:hover {
+      background-color: #5aa5ac;
+    }
+
+    .button-container .goto-button {
+      background-color: #f89646;
+      color: white;
+    }
+
+    .button-container .goto-button:hover {
+      background-color: #e08535;
+    }
+
+    /* Icon size */
+    .button-container button i {
+      font-size: 14px; /* Smaller icon size */
+    }
+  </style>
+
+  <!-- about section -->
+  <section class="about_section layout_padding long_section content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-6">
+          <div class="img-box">
+            <img src="{% static 'images/about-img.png' %}" alt="">
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="detail-box">
+            <div class="heading_container">
+              <h2>
+                {{ event }}
+              </h2>
+            </div>
+            <p>
+              {{ event.url }}
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Corrupti dolorem eum consequuntur ipsam repellat dolor soluta aliquid laborum, eius odit consectetur vel quasi in quidem, eveniet ab est corporis tempore.
+            </p>
+            <br><br><br><br>
+            <div class="url-input-container">
+              <input type="text" id="urlInput" value="{{ request.scheme }}://{{ request.get_host }}/event/{{ event.slug }}" readonly />
+            </div>
+            <div class="button-container">
+              <button class="copy-button" onclick="copyUrl()">
+                <i class="fa fa-copy"></i> Copy URL
+              </button>
+              <button class="goto-button" onclick="window.location.href='{{ request.scheme }}://{{ request.get_host }}/event/{{ event.slug }}'">
+                <i class="fa fa-arrow-right"></i> Go to Event
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end about section -->
+
+  <!-- footer section -->
+  {% include 'includes/_footer.html' %}
+  <!-- footer section -->
+
+  <script>
+    function copyUrl() {
+      const urlInput = document.getElementById('urlInput');
+      urlInput.select();
+      document.execCommand('copy');
+      alert('URL copied to clipboard!');
+    }
+  </script>
+{% endblock %}

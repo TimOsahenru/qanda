@@ -6,7 +6,7 @@ class TestEventModel(TestCase):
     def setUp(self):
         self.event = Event.objects.create(
             name='afcon 2025',
-            url='http://timosahenru.com',
+            slug='afcon-2025',
         )
 
 
