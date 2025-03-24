@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Create questions</title>
+</head>
+<body>
+    <h2>{{event.name}}</h2>
+
+    {% for question in questions %}
+    <p>{{question.text}}</p>
+    {% endfor %}
+    <form method="POST">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit">send</button>
+    </form>
+</body>
+</html>

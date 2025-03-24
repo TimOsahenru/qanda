@@ -1,5 +1,74 @@
-<form method="POST">
-  {% csrf_token %}
-  {{form.as_p}}
-  <button type="submit" class="btn1">Create</button>
-</form>
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{block.super}} | home{% endblock %}
+{% block content %}
+<div class="hero_area">
+  <!-- header section strats -->
+  {% include 'includes/_header.html' %}
+  <!-- end header section -->
+
+  <!-- hero section -->
+  <section class="slider_section long_section">
+    <div id="customCarousel" class="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="container ">
+            <div class="row">
+              <div class="col-md-5">
+                <div class="detail-box">
+                  <h1>
+                    Smartest way to collect questions from your audience.
+                  </h1>
+                  <p>
+                    Streamline your Q&A in advance. <br>Just share the link with your audience
+                  </p>
+                  <div class="btn-box">
+
+                    {% if messages %}
+                    <div class="error-messages" style="margin: 1rem 0; padding: 0;">
+                        {% for message in messages %}
+                            {% if message.tags == 'error' %}
+                            <div style="background-color: #fee2e2; 
+                                        border-left: 4px solid #dc2626;
+                                        color: #b91c1c;
+                                        padding: 1rem;
+                                        margin-bottom: 0.5rem;
+                                        border-radius: 0 4px 4px 0;
+                                        display: flex;
+                                        align-items: center;
+                                        gap: 0.5rem;">
+                                <svg style="width: 1.25rem; height: 1.25rem; flex-shrink: 0;" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                                </svg>
+                                <span>{{ message }}</span>
+                            </div>
+                            {% endif %}
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                      <form method="POST">
+                          {% csrf_token %}
+                          <input type="text" name="{{ form.name.name}}" id="{{ form.name.id_for_label }}" class="input-field" placeholder="E.g: Chat with Osahenru" required><br><br>
+                          <button type="submit" class="btn1">Generate event link</button>
+                      </form>
+                  </div>
+                </div>
+              </div>
+              <div class="col-md-7">
+                <div class="img-box">
+                  <img src="{% static 'images/1.png' %}" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end hero section -->
+</div>
+
+<!-- footer section -->
+ {% include 'includes/_footer.html' %}
+<!-- footer section -->
+ {% endblock %}

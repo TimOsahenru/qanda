@@ -20,8 +20,19 @@ class CreateEventViewTest(TestCase):
             'name': 'PyConGh 2025',
             'created_at': '2023-10-01 12:00:00',
             'updated_at': '2023-10-01 14:00:00',
-            'url': 'http://timosahenru.com/'
+            'slug': 'pycongh-2025',
         }
 
         response = self.client.post(reverse('home_view'), data)
         self.assertEqual(response.status_code, 302)
+        print(response)
+
+
+
+# test_event
+# event name without space should be support
+
+
+# test models
+# save method
+# absolute url method

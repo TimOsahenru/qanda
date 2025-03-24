@@ -54,7 +54,7 @@ body {
 .heading_container h2 {
   position: relative;
   font-weight: bold;
-  text-transform: uppercase;
+  text-transform: none !important;
 }
 
 /*header section*/
@@ -124,7 +124,7 @@ a:focus {
   font-size: 24px;
   font-weight: 700;
   color: #272727;
-  text-transform: uppercase;
+  text-transform: none !important;
 }
 
 .custom_nav-container {
@@ -190,7 +190,7 @@ a:focus {
   top: 0;
 }
 
-.quote_btn-container {
+.signup-btn {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -199,13 +199,14 @@ a:focus {
           align-items: center;
 }
 
-.quote_btn-container a {
-  color: #151515;
+.signup-btn a {
+  color: #ffffff;
+  background-color: #191e1f;
   margin-right: 25px;
-  text-transform: uppercase;
+  text-transform: none !important;
 }
 
-.quote_btn-container a span {
+.signup-btn a span {
   margin-right: 5px;
 }
 
@@ -275,8 +276,8 @@ a:focus {
 }
 
 .slider_section .detail-box .btn-box .btn1:hover {
-  background-color: transparent;
-  color: #f89646;
+  background-color: #C76F39 !important;
+  color: #ffffff !important;
 }
 
 .slider_section .detail-box .btn-box .btn2 {
