@@ -237,6 +237,7 @@ a:focus {
   z-index: 3;
 }
 
+
 .slider_section .detail-box {
   color: #000000;
 }
@@ -245,6 +246,7 @@ a:focus {
   font-weight: bold;
   text-transform: uppercase;
   margin-bottom: 0;
+
 }
 
 .slider_section .detail-box p {
@@ -280,7 +282,7 @@ a:focus {
   color: #ffffff !important;
 }
 
-.slider_section .detail-box .btn-box .btn2 {
+/* .slider_section .detail-box .btn-box .btn2 {
   display: inline-block;
   padding: 10px 15px;
   background-color: #6bb7be;
@@ -289,18 +291,18 @@ a:focus {
   border: 1px solid #6bb7be;
   -webkit-transition: all .2s;
   transition: all .2s;
-}
+} */
 
-.slider_section .detail-box .btn-box .btn2:hover {
+/* .slider_section .detail-box .btn-box .btn2:hover {
   background-color: transparent;
   color: #6bb7be;
-}
+} */
 
 .slider_section .img-box img {
   width: 100%;
 }
 
-.slider_section .carousel-indicators {
+/* .slider_section .carousel-indicators {
   position: unset;
   margin: 0;
   -webkit-box-pack: center;
@@ -324,7 +326,7 @@ a:focus {
   width: 17px;
   height: 17px;
   background-color: #f89646;
-}
+} */
 
 
 .about_section {
@@ -363,7 +365,7 @@ a:focus {
 }
 
 
-.contact_section {
+/* .contact_section {
   position: relative;
   background-color: #f9fafa;
   padding-top: 75px;
@@ -449,7 +451,7 @@ a:focus {
 
 .contact_section .map_container .map #googleMap {
   height: 100%;
-}
+} */
 
 
 
@@ -518,6 +520,7 @@ a:focus {
 
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
+
   .btn-box {
     max-width: 100%;
   }
