@@ -25,14 +25,27 @@ class CreateEventViewTest(TestCase):
 
         response = self.client.post(reverse('home_view'), data)
         self.assertEqual(response.status_code, 302)
-        print(response)
 
 
+    def test_error_message_display_in_duplicate_event_names(self):
+         
+        data = {
+            'name': 'PyConGh 2025',
+            'created_at': '2023-10-01 12:00:00',
+            'updated_at': '2023-10-01 14:00:00',
+            'slug': 'pycongh-2025',
+        }
+        self.client.post(reverse('home_view'), data)
 
-# test_event
-# event name without space should be support
+        duplicate_data = {
+            'name': 'PyConGh 2025',
+            'created_at': '2023-10-01 12:00:00',
+            'updated_at': '2023-10-01 14:00:00',
+            'slug': 'pycongh-2025',
+        }
+        response = self.client.post(reverse('home_view'), duplicate_data, follow=True)
 
-
-# test models
-# save method
-# absolute url method
+        messages = list(response.context['messages'])
+        self.assertEqual(len(messages), 1)
+        self.assertIn(data['name'], str(messages[0]))
+        

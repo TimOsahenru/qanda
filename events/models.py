@@ -5,7 +5,6 @@ from django.urls import reverse
 from django.core.exceptions import ValidationError
 
 
-# Create your models here.
 class Event(models.Model):
     # organizer
     name = models.CharField(max_length=250)
