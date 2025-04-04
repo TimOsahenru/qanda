@@ -1,6 +1,8 @@
 from django.test import TestCase, Client
 from django.urls import reverse
 
+from events.models import Event
+from questions.models import Question
 
 class CreateEventViewTest(TestCase):
     def setUp(self):
@@ -48,4 +50,21 @@ class CreateEventViewTest(TestCase):
         messages = list(response.context['messages'])
         self.assertEqual(len(messages), 1)
         self.assertIn(data['name'], str(messages[0]))
-        
+
+
+class EventDetailViewTest(TestCase):
+    def setUp(self):
+        self.client = Client()
+
+        self.event = Event.objects.create(name='test event', slug='test-event')
+        self.question_1 = Question.objects.create(event=self.event, text='Question 1')
+        self.question_2 = Question.objects.create(event=self.event, text='Question 2')
+
+
+    def test_event_detail_views(self):
+        response = self.client.get(reverse('event_details', args=[self.event.slug]))
+
+        self.assertEqual(response.status_code, 200)
+        self.assertIn('questions', response.context)
+        self.assertEqual(len(response.context['questions']), 2)
+        self.assertQuerySetEqual(response.context['questions'], [self.question_1, self.question_2], ordered=False)

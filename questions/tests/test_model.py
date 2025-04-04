@@ -12,7 +12,7 @@ class TestQuestionModelClass(TestCase):
 
         self.question = Question.objects.create(
             event=self.event,
-            text='How are you?',
+            text='How to be successful',
         )
 
     def test_str_question_method(self):

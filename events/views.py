@@ -16,6 +16,7 @@ def event_details(request, slug):
 
     return render(request, 'event-detail.html', {'event': event, 'questions': questions})
 
+
 def home_view(request):
     if request.method == 'POST':
         form = EventForm(request.POST)
